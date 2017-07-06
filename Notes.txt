@@ -1,0 +1,55 @@
+/* 
+/* 
+/* Capital gain and years in education has weak correlation
+/* Apply binning method (convert continuous attributes into categorical for chi quare?)
+/*
+
+1.1.a
+Done - Table
+
+1.1.b
+Done - Table & Histogram
+
+1.1.c
+Done - Apply Box & Whisker to find outlier
+Done - Apply Pearson's Coefficient and Correlation (PROC CORR) to find correlation
+Done - Apply K-means to find group with similar characteristic (Outlier need to be done first before k-means)
+Done - Apply IQV on categorical attributes to find out the dispersion
+X - Apply Apriori (PROC ASSOC) to find association
+
+Bayesian Classification, Hypergraph-Based Clustering, and Fuzzy k-Modes Clustering
+
+1.2.a
+- Apply binning method to :
+a) Years_in_Education (Bucket) - To see the skewness
+b) Work_per_week (Bucket) - To see the skewness
+   Work_per_week (Winsorized) - To smoothen the edge (Upper and Bottom) as there are a lot of outlier 
+   - Refer to 1.1.b & 1.1.c  
+  
+1.2.b
+- Update ? value to Unknown
+- Apply Rank Transformation to Qualification & Salary
+- Check if there's duplicates
+
+- Apply Box Cox to Capital Gain & Loss to make smoothen the dispersion
+- Update JobType to Govern Servant, Private or Self-employed
+
+1.2.c
+
+Summary
+--------------
+Female study more;
+Female earn more;
+assign a unique key to each observation
+Qualification has any impact on income; higher earn more; 
+Age has anyimpact on impact; older earn more;
+What age range likes what occupation;
+Asian work longer hours; Married work lesser hours;
+Asian/Black/etc earn less but work more compare to white? or equal.
+Government servant has higher education
+Private sector earn more
+Majority of the population has high education, at least high school. It's a left skewed distirbution
+the sample dataset has a normal distribution of age?
+interesting finding on the distribution of work per week, see1.2.a !
+ */
+
