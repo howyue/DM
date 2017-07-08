@@ -3,8 +3,45 @@ proc sort data=dm.raw nodup out=dm.raw;
  by _all_;
 run; 
 
+proc format;
+   value $CountryFmt  
+		'United-States'='U.S'
+		other='Other';
+run;
+
+proc format;
+	value EducationFmt
+		low-9='< High School'
+		10-13='College'
+		14-14='Bachelor'
+		15-15='Master'
+		16-high='Doctorate';
+run;
+
+proc format;
+	value AgeGroupFmt
+		low-20='Teenage'
+		21-30='Young'
+		31-45='Mid_age'
+		46-65='Mature'
+		65-high='Old';
+run;
+proc format;
+   value $JobTypeFmt  'Federal-gov'='Goverment'
+                   'Local-gov'='Goverment' 
+                   'State-gov'='Goverment' 
+                   'Private'='Private'
+                   'Self-emp-inc'='Self-Employed'
+                   'Self-emp-not-inc'='Self-Employed'
+                  other='Other';
+run;
+
 data work.ds;
 	set dm.raw;
+	
+/* Apply format */
+	format age AgeGroupFmt.;
+	format JobType $JobTypeFmt.;
 
 /* Update ? to Unknown */
 	if JobType='?' then	JobType='Unknown';
