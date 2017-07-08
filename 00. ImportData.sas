@@ -5,6 +5,3 @@ data dm.raw;
 	Job :$20. Relationship_Status  :$20. Race :$20. Gender :$10.
 	Capital_gain Capital_loss Work_per_week Country :$50. Salary :$5.;
 run;
-/*
-proc print data=work.raw;
-*/
