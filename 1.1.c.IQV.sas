@@ -1,4 +1,4 @@
-PROC SQL;
+proc sql;
 	CREATE TABLE WORK.IQV AS 	
 	SELECT P.TYPE, ROUND((K * ((100*100) - SUM((P/TOT*100)*(P/TOT*100)))) / ((100*100) * (K-1)), 0.01) AS IQV
 	FROM (
@@ -42,7 +42,7 @@ PROC SQL;
 	  ON P.TYPE = K.TYPE
 GROUP BY P.TYPE
 ;
-RUN;
+run;
 
 proc print data=work.iqv;
 run;
